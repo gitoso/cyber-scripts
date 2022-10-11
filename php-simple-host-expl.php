@@ -46,6 +46,7 @@
 	function exec_cmd_and_exit($type, $cmd) {
 		echo "# $cmd";
 	        echo '<br><br>';
+			echo '<pre>';
 	
 		switch($type) {
 			case 'passthru':
@@ -65,6 +66,7 @@
 				system("$cmd 2>&1", $return_value);
 		  		($return_value == 0) or die();			
 		}
+		echo '</pre>';
 		exit();
 	}
 
